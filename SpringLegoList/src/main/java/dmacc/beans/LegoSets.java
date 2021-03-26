@@ -6,19 +6,16 @@
 package dmacc.beans;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 @Entity
 public class LegoSets {
 	
 	@Id
-	private String set_name;
-	private String set_year;
-	private long piece_count;
-	private String set_theme; 
+	private String setName;
+	private String setYear;
+	private long pieceCount;
+	private String setTheme; 
 
 	public LegoSets() {
 		
@@ -26,96 +23,96 @@ public class LegoSets {
 
 	public LegoSets(String name) {
 		super();
-		this.set_name = name;
+		this.setName = name;
 	}
 
 	public LegoSets(String name, String year) {
 		super();
-		this.set_name = name;
-		this.set_year = year;
+		this.setName = name;
+		this.setYear = year;
 	}
 
 	public LegoSets(String name, String year, long piece_count) {
 		super();
-		this.set_name = name;
-		this.set_year = year;
-		this.piece_count = piece_count;
+		this.setName = name;
+		this.setYear = year;
+		this.pieceCount = piece_count;
 	}
 
 	public LegoSets(String name, String year, String theme) {
 		super();
-		this.set_name = name;
-		this.set_year = year;
-		this.set_theme = theme;
+		this.setName = name;
+		this.setYear = year;
+		this.setTheme = theme;
 	}
 
 	public LegoSets(String name, String year, long piece_count, String theme) {
 		super();
-		this.set_name = name;
-		this.set_year = year;
-		this.piece_count = piece_count;
-		this.set_theme = theme;
+		this.setName = name;
+		this.setYear = year;
+		this.pieceCount = piece_count;
+		this.setTheme = theme;
 	}
 
 	/**
 	 * @return the name
 	 */
 	public String getName() {
-		return set_name;
+		return setName;
 	}
 
 	/**
 	 * @param name the name to set
 	 */
 	public void setName(String name) {
-		this.set_name = name;
+		this.setName = name;
 	}
 
 	/**
 	 * @return the year
 	 */
 	public String getYear() {
-		return set_year;
+		return setYear;
 	}
 
 	/**
 	 * @param year the year to set
 	 */
 	public void setYear(String year) {
-		this.set_year = year;
+		this.setYear = year;
 	}
 
 	/**
 	 * @return the piece_count
 	 */
 	public long getPiece_count() {
-		return piece_count;
+		return pieceCount;
 	}
 
 	/**
 	 * @param piece_count the piece_count to set
 	 */
 	public void setPiece_count(long piece_count) {
-		this.piece_count = piece_count;
+		this.pieceCount = piece_count;
 	}
 
 	/**
 	 * @return the theme
 	 */
 	public String getTheme() {
-		return set_theme;
+		return setTheme;
 	}
 
 	/**
 	 * @param theme the theme to set
 	 */
 	public void setTheme(String theme) {
-		this.set_theme = theme;
+		this.setTheme = theme;
 	}
 
 	@Override
 	public String toString() {
-		return "Sets [name=" + set_name + ", year=" + set_year + ", piece_count=" + piece_count + ", theme=" + set_theme + "]";
+		return "Sets [name=" + setName + ", year=" + setYear + ", piece_count=" + pieceCount + ", theme=" + setTheme + "]";
 	}
 
 }

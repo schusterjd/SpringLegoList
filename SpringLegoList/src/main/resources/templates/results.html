@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>View All Sets</title>
+</head>
+<body>
+<form>
+<table>
+<tr th:each="currentSet : ${sets}" >
+	<td th:text="${currentSet.setName}" />
+	<td th:text="${currentSet.setYear}" />
+	<td th:text="${currentSet.pieceCount}" />
+	<td th:text="${currentSet.setTheme}" />
+	<td><a th:href="@{/edit/{id}(id=${currentSet.setName})}">Edit</a></td>
+	<td><a th:href="@{/delete/{id}(id=${currentSet.setName})}">Delete</a></td>
+</tr>
+</table>
+</form>
+<a href="../inputSet">Add a new set</a>
+</body>
+</html>
