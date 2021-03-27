@@ -5,7 +5,7 @@
 <title>Insert New Lego Set</title>
 </head>
 <body>
-<form th:object="${newSet}" th:action="@{/update/{id}(id=${newSet.setName})}" method='POST'>
+<form th:object="${newSet}" th:action="@{/update/{id}(id=${newSet.id})}" method='POST'>
 
 Set Name: <input name="setName" size="20" th:field="*{setName}"><br />
 Set Year: <input name="setYear" size="10" th:field="*{setYear}"><br />
