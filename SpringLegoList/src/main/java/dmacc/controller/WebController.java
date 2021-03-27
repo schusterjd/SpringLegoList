@@ -52,8 +52,7 @@ public class WebController {
 	}
 	
 	@GetMapping("/edit/{id}")
-	public String showUpdateSet(@PathVariable("id") String id, Model model) {
-		
+	public String showUpdateSet(@PathVariable("id") long id, Model model) {
 		LegoSets s = repo.findById(id).orElse(null);
 		model.addAttribute("newSet", s);
 		return "input";
@@ -69,7 +68,7 @@ public class WebController {
 	}
 	
 	@GetMapping("/delete/{id}")
-	public String deleteUser(@PathVariable("id") String id, Model model) {
+	public String deleteUser(@PathVariable("id") long id, Model model) {
 		
 		LegoSets s = repo.findById(id).orElse(null);
 		repo.delete(s);

@@ -9,6 +9,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import dmacc.beans.LegoSets;
 
-public interface LegoRepository extends JpaRepository<LegoSets, String> {
+public interface LegoRepository extends JpaRepository<LegoSets, Long> {
 
 }

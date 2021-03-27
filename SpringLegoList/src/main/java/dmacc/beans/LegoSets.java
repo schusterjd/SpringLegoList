@@ -6,20 +6,27 @@
 package dmacc.beans;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 @Entity
+@Data
+@NoArgsConstructor
 public class LegoSets {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long id;
+	//added in the id as it should probably be the unique value - not set name
 	private String setName;
 	private String setYear;
 	private long pieceCount;
 	private String setTheme; 
 
-	public LegoSets() {
-		
-	}
 
 	public LegoSets(String name) {
 		super();
@@ -54,65 +61,12 @@ public class LegoSets {
 		this.setTheme = theme;
 	}
 
-	/**
-	 * @return the name
-	 */
-	public String getName() {
-		return setName;
-	}
-
-	/**
-	 * @param name the name to set
-	 */
-	public void setName(String name) {
-		this.setName = name;
-	}
-
-	/**
-	 * @return the year
-	 */
-	public String getYear() {
-		return setYear;
-	}
-
-	/**
-	 * @param year the year to set
-	 */
-	public void setYear(String year) {
-		this.setYear = year;
-	}
-
-	/**
-	 * @return the piece_count
-	 */
-	public long getPiece_count() {
-		return pieceCount;
-	}
-
-	/**
-	 * @param piece_count the piece_count to set
-	 */
-	public void setPiece_count(long piece_count) {
-		this.pieceCount = piece_count;
-	}
-
-	/**
-	 * @return the theme
-	 */
-	public String getTheme() {
-		return setTheme;
-	}
-
-	/**
-	 * @param theme the theme to set
-	 */
-	public void setTheme(String theme) {
-		this.setTheme = theme;
-	}
-
 	@Override
 	public String toString() {
 		return "Sets [name=" + setName + ", year=" + setYear + ", piece_count=" + pieceCount + ", theme=" + setTheme + "]";
 	}
+
+	//several setters were missing and the setters were not correct for the setName variable. 
+	//I opted to remove them and let Lombok generate them so they are automatically there.
 
 }
