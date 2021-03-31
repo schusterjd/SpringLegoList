@@ -27,7 +27,6 @@ public class LegoSets {
 	private long pieceCount;
 	private String setTheme; 
 
-
 	public LegoSets(String name) {
 		super();
 		this.setName = name;
