@@ -12,6 +12,8 @@
 	<td th:text="${currentSet.setYear}" />
 	<td th:text="${currentSet.pieceCount}" />
 	<td th:text="${currentSet.setTheme}" />
+	<td th:text="${currentSet.producer.factory}" />
+	<td th:text="${currentSet.seller.salesman}" />
 	<td><a th:href="@{/edit/{id}(id=${currentSet.id})}">Edit</a></td>
 	<td><a th:href="@{/delete/{id}(id=${currentSet.id})}">Delete</a></td>
 </tr>

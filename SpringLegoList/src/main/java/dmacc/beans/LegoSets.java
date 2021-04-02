@@ -10,6 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -25,7 +27,11 @@ public class LegoSets {
 	private String setName;
 	private String setYear;
 	private long pieceCount;
-	private String setTheme; 
+	private String setTheme;
+	@Autowired
+	private Producer producer;
+	@Autowired
+	private Seller seller;
 
 	public LegoSets(String name) {
 		super();
