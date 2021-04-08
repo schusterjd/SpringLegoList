@@ -5,16 +5,92 @@
 <title>Insert New Lego Set</title>
 </head>
 <body>
-<form th:object="${newSet}" th:action="@{/update/{id}(id=${newSet.id})}" method='POST'>
+<form th:object="${newSet}" th:action="@{/update/{id}(id=${newSet.id})}" onsubmit="return checkForm(this);" method='POST'>
 
 Set Name: <input name="setName" size="20" th:field="*{setName}"><br />
 Set Year: <input name="setYear" size="10" th:field="*{setYear}"><br />
 Piece Count: <input name="pieceCount" size="20" th:field="*{pieceCount}"><br />
 Set Theme: <input name="setTheme" size="20" th:field="*{setTheme}"><br />
-Factory: <input name="producer.factory" size="20" th:field="*{producer.factory}"><br />
-Salesman: <input name="seller.salesman" size="20" th:field="*{seller.salesman}"><br />
+Factory: <input name="factory" size="20" th:field="*{producer.factory}"><br />
+Salesman: <input name="salesman" size="20" th:field="*{seller.salesman}"><br />
 <input name="submit" type="submit" value="submit" />
 </form>
+<script type="text/javascript">
+	
+	function checkForm(form) {
+		
+		if(form.setName.value == "") {
+			
+			alert("Error! Set Name is empty!");
+			form.setName.focus();
+			return false;
+			
+		}
+		
+		var digitOnly = /^\d+$/;
+		
+		if(form.setYear.value == "") {
+			
+			alert("Error! Set Year is empty!");
+			form.setYear.focus();
+			return false;
+			
+		} else if(!digitOnly.test(form.setYear.value)) {
+			
+			alert("Error! Set Year was not entered as a number!");
+			form.setYear.focus();
+			return false;
+			
+		}
+		
+		if(form.pieceCount.value == "") {
+			
+			alert("Error! Piece Count is empty!");
+			form.pieceCount.focus();
+			return false;
+			
+		} else if(!digitOnly.test(form.pieceCount.value)) {
+			
+			alert("Error! Piece Count was not entered as a number!");
+			form.pieceCount.focus();
+			return false;
+			
+		}
+		
+		if(form.setTheme.value == "") {
+			
+			alert("Error! Set Theme is empty!");
+			form.setTheme.focus();
+			return false;
+			
+		}
+		
+		if(form.factory.value == "") {
+			
+			alert("Error! Factory is empty!");
+			form.factory.focus();
+			return false;
+			
+		}
+		
+		var lettersAndSpacesOnly = /^[a-z][a-z\s]*$/;
+		if(form.salesman.value == "") {
+			
+			alert("Error! Salesman is empty!");
+			form.salesman.focus();
+			return false;
+			
+		} else if(!lettersAndSpacesOnly.test(form.salesman.value)) {
+			
+			alert("Error! Salesman should only contan letters and spaces!");
+			form.salesman.focus();
+			return false;
+			
+		}
+		
+	}
+
+</script>
 <a href="viewAll">View all Sets</a>
 </body>
 </html>
